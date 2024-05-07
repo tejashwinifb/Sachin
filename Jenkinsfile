@@ -3,7 +3,7 @@ Pipeline {
       stages {
          stage('clone'){
            steps {
-             git branch: 'main', credentialsId: 'git,url:'https://github.com/tejashwinifb/Sachin.git'
+             git branch: 'main', credentialsId: 'git',url:'https://github.com/tejashwinifb/Sachin.git'
            }
                      }
          stage('build'){
