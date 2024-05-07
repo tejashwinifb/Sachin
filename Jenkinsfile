@@ -1,20 +1,20 @@
-Pipeline{
+Pipeline {
       agent any
-      stages{
+      stages {
          stage('clone'){
-           steps{
-             checkout scmGit(branches:[[name:'*/main]],extensions:[],UserRemoteconfigs:[[credentialsId:'git',url:'https://github.com/tejashwinifb/Sachin.git']])
+           steps {
+             git branch: 'main', credentialsId: 'git,url:'https://github.com/tejashwinifb/Sachin.git'
            }
                      }
          stage('build'){
-            steps{
+            steps {
               sh "ls"
             }
          }
-         stage('trigger') {             
+         stage('trigger'){             
            steps {
             sh "touch file1"
            }
-}
+    }
  }
 }
