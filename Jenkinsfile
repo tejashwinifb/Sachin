@@ -1,20 +1,17 @@
-Pipeline {
-      agent any
-      stages {
-         stage ('clone'){
-           steps {
-             git branch: 'main', credentialsId: 'git',url:'https://github.com/tejashwinifb/Sachin.git'
-           }
-                     }
-         stage ('build'){
+pipeline {
+    agent any 
+stages {
+    stage ('clone'){
+        steps {
+           git branch: 'main', credentialsId: 'git', url: 'https://github.com/tejashwinifb/Sachin.git'
+ 
+}
+}
+     stage ('trigger') {
             steps {
-              sh "ls"
-            }
-         }
-         stage ('trigger'){             
-           steps {
-            sh "ls"
-           }
-    }
- }
+                script {
+                    sh 'touch f1'
+             }
+        }   
+     }
 }
